@@ -1,0 +1,7 @@
+---
+ghq_root: "{{ ansible_user_dir }}/ghq/github.com"
+
+git_repositories:
+  - { repo: "https://github.com/snakagawax/dotfiles.git", dest: "{{ ghq_root }}/snakagawax/dotfiles" }
+  - { repo: "https://github.com/aws/aws-cli.git", dest: "{{ ghq_root }}/aws/aws-cli" }
+  - { repo: "https://github.com/awslabs/git-secrets.git", dest: "{{ ghq_root }}/awslabs/git-secrets" }

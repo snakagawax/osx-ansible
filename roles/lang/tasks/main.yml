@@ -1,0 +1,5 @@
+---
+- import_tasks: pip3.yml
+  tags:
+    - pip3
+
