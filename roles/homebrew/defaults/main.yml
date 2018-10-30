@@ -2,7 +2,7 @@
 homebrew_taps:
   - caskroom/cask
   - sanemat/font
-  
+
 homebrew_packages:
   - { name: readline }
   - { name: openssl }
@@ -14,16 +14,15 @@ homebrew_packages:
   - { name: ghq }
   - { name: hub }
   - { name: peco }
-  - { name: zsh, install_options: disable-etcdir }
-  - { name: wget }
+  - { name: tig }
+  - { name: fish }
   - { name: curl }
+  - { name: wget }
   - { name: cmake }
   - { name: tree }
   - { name: nkf }
   - { name: jq }
   - { name: direnv }
-  - { name: tig }
-  - { name: fish }
   - { name: flow }
   - { name: mysql }
   - { name: sqlite }
@@ -38,25 +37,25 @@ homebrew_packages:
   - { name: packer }
   - { name: go }
   - { name: terminal-notifier }
-  
+
 homebrew_cask_packages:
+  - { name: google-japanese-ime }
+  - { name: karabiner-elements }
+  - { name: vagrant }
+  - { name: virtualbox }
   - { name: alfred }
   - { name: atom }
+  - { name: bettertouchtool }
   - { name: clipy }
-  - { name: teamviewer }
+  - { name: coteditor }
+  - { name: dash }
+  - { name: docker }
+  - { name: dropbox }
+  - { name: hyperswitch }
   - { name: iterm2 }
   - { name: google-chrome }
-  - { name: google-japanese-ime }
   - { name: java }
+  - { name: skitch }
   - { name: skype }
   - { name: slack }
   - { name: sourcetree }
-  - { name: karabiner-elements }
-  - { name: docker }
-  - { name: dash }
-  - { name: skitch }
-  - { name: vagrant }
-  - { name: caffeine }
-  - { name: dropbox }
-  - { name: coteditor }
-  - { name: hyperswitch }
