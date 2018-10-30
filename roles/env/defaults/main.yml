@@ -1,5 +1,5 @@
 ---
-ghq_root: "{{ ansible_user_dir }}/ghq/github.com"
+ghq_root: "{{ ansible_user_dir }}/.ghq/github.com"
 
 git_repositories:
   - { repo: "https://github.com/snakagawax/dotfiles.git", dest: "{{ ghq_root }}/snakagawax/dotfiles" }
