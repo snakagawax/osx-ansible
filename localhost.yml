@@ -6,3 +6,4 @@
     - { role: homebrew, tags: [ homebrew ] }
     - { role: env, tags: [ env ] }
     - { role: lang, tags: [ lang ] }
+    - { role: atom, tags: [ atom ] }
