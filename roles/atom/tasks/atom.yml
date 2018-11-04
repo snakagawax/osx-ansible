@@ -1,6 +1,6 @@
 ---
 - name: apm login
-  command: "apm login --token {{ token }}"
+  command: "apm login --token {{ item.token }}"
   changed_when: no
   with_items: '{{ apm_token }}'
 
