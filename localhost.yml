@@ -8,3 +8,4 @@
     - { role: lang, tags: [ lang ] }
     - { role: atom, tags: [ atom ] }
     - { role: mac, tags: [ mac ] }
+    - { role: ricty, tags: [ ricty ] }
