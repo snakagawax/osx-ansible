@@ -2,6 +2,7 @@
 homebrew_taps:
   - caskroom/cask
   - sanemat/font
+  - homebrew/cask-versions
 
 homebrew_packages:
   - { name: readline }
@@ -44,9 +45,11 @@ homebrew_cask_packages:
   - { name: karabiner-elements }
   - { name: vagrant }
   - { name: virtualbox }
+  - { name: vmware-fusion10 }
   - { name: alfred }
   - { name: atom }
   - { name: bettertouchtool }
+  - { name: cheatsheet }
   - { name: clipy }
   - { name: coteditor }
   - { name: dash }
