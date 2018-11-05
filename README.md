@@ -8,11 +8,13 @@
   $ sudo xcodebuild -license
   ```
 
+- Launch Xcode and install required components.
+
 - Install Command Line Tool.
   ```
   $ xcode-select --install
   ```
-  If it is not able to install from cli, download Command Line Tool from [the official website](https://developer.apple.com/download/more/) and install it.
+  If it is not able to install from cli, download Command Line Tool from [official website](https://developer.apple.com/download/more/) and install it.
 
 - Create a script.
   ```
