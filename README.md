@@ -12,7 +12,7 @@
   ```
   $ xcode-select --install
   ```
-  Note: If it is not able to install from cli, download Command Line Tool from [the Official site](https://developer.apple.com/download/more/) and install it.
+  If it is not able to install from cli, download Command Line Tool from [the official website](https://developer.apple.com/download/more/) and install it.
 
 - Create a script.
   ```
