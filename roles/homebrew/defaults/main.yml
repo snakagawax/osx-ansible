@@ -42,12 +42,11 @@ homebrew_packages:
 
 homebrew_cask_packages:
   - { name: google-japanese-ime }
+  - { name: java }
   - { name: karabiner-elements }
   - { name: vagrant }
-  - { name: virtualbox }
   - { name: vmware-fusion10 }
   - { name: alfred }
-  - { name: atom }
   - { name: bettertouchtool }
   - { name: cheatsheet }
   - { name: clipy }
@@ -58,8 +57,6 @@ homebrew_cask_packages:
   - { name: hyperswitch }
   - { name: iterm2 }
   - { name: google-chrome }
-  - { name: java }
   - { name: skitch }
   - { name: skype }
-  - { name: slack }
   - { name: sourcetree }

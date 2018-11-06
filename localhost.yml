@@ -9,3 +9,4 @@
     - { role: atom, tags: [ atom ] }
     - { role: mac, tags: [ mac ] }
     - { role: ricty, tags: [ ricty ] }
+    - { role: mas, tags: [ mas ] }
