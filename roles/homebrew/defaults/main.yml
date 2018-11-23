@@ -39,6 +39,7 @@ homebrew_packages:
   - { name: go }
   - { name: terminal-notifier }
   - { name: q }
+  - { name: rmtrash }
 
 homebrew_cask_packages:
   - { name: google-japanese-ime }
