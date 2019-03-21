@@ -45,6 +45,7 @@ homebrew_cask_packages:
   - { name: google-japanese-ime }
   - { name: karabiner-elements }
   - { name: alfred }
+  - { name: atom }
   - { name: bettertouchtool }
   - { name: cheatsheet }
   - { name: clipy }
