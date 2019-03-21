@@ -4,7 +4,7 @@
   connection: local
   roles:
     - { role: homebrew, tags: [ homebrew ] }
-    - { role: env, tags: [ env ] }
+    - { role: git, tags: [ git ] }
     - { role: lang, tags: [ lang ] }
     - { role: atom, tags: [ atom ] }
     - { role: mac, tags: [ mac ] }
