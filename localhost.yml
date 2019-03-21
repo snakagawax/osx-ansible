@@ -8,5 +8,6 @@
     - { role: lang, tags: [ lang ] }
     - { role: atom, tags: [ atom ] }
     - { role: mac, tags: [ mac ] }
+    - { role: fish, tags: [ fish ] }
     - { role: ricty, tags: [ ricty ] }
     - { role: mas, tags: [ mas ] }
