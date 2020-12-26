@@ -13,3 +13,10 @@
     name: '{{ item.name }}'
     state: '{{ item.state | default("present") }}'
   with_items: '{{ homebrew_packages }}'
+
+- name: install homebrew cask packages
+  homebrew:
+    name: '{{ item.name }}'
+    state: '{{ item.state | default("present") }}'
+  with_items: '{{ homebrew_cask_packages }}'
+  failed_when: no

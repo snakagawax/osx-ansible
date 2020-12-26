@@ -1,8 +1,6 @@
 ---
 homebrew_taps:
-  - caskroom/cask
   - sanemat/font
-  - homebrew/cask-versions
 
 homebrew_packages:
   - { name: readline }
@@ -30,6 +28,8 @@ homebrew_packages:
   - { name: terminal-notifier }
   - { name: q }
   - { name: rmtrash }
+
+homebrew_cask_packages:
   - { name: alfred }
   - { name: cheatsheet }
   - { name: clipy }
