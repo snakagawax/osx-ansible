@@ -43,16 +43,11 @@ homebrew_packages:
 
 homebrew_cask_packages:
   - { name: google-japanese-ime }
-  - { name: karabiner-elements }
   - { name: alfred }
   - { name: atom }
-  - { name: bettertouchtool }
   - { name: cheatsheet }
   - { name: clipy }
-  - { name: dash }
   - { name: docker }
-  - { name: dropbox }
   - { name: hyperswitch }
   - { name: iterm2 }
-  - { name: google-chrome }
   - { name: skitch }
