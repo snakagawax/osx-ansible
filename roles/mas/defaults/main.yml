@@ -1,13 +1,7 @@
 ---
 mas:
-  - name: Evernote
-    id: 406056744
-
   - name: Keynote
     id: 409183694
 
   - name: Skack
     id: 803453959
-
-  - name: SoraAnnai
-    id: 599799247

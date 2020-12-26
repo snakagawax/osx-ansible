@@ -8,12 +8,6 @@
     state: present
   with_items: '{{ homebrew_taps }}'
 
-- name: install homebrew cask packages
-  homebrew_cask: name={{ item.name }} state=installed
-  environment:
-    HOMEBREW_CASK_OPTS: "--appdir=/Applications"
-  with_items: '{{ homebrew_cask_packages }}'
-
 - name: install homebrew packages
   homebrew:
     name: '{{ item.name }}'
