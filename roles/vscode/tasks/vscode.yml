@@ -1,0 +1,11 @@
+---
+- name : List vscode extensions
+  command: code --list-extensions
+  register: result_extension_list
+  changed_when: false
+  check_mode: false
+
+- name: Install vscode extensions
+  command: "code --install-extension {{item}}"
+  loop: "{{ vscode_extensions | map('lower') | list }}"
+  when: not item in (result_extension_list.stout_lines | map('lower') | list)

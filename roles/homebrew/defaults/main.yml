@@ -33,6 +33,9 @@ homebrew_cask_packages:
   - { name: alfred }
   - { name: cheatsheet }
   - { name: clipy }
+  - { name: docker }
+  - { name: google-chrome }
   - { name: google-japanese-ime }
   - { name: iterm2 }
   - { name: skitch }
+  - { name: visual-studio-code }
