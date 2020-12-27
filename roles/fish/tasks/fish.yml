@@ -3,5 +3,5 @@
   shell: curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
 
 - name: Install by fisher
-  shell: fish -c "fisher {{ item }}"
+  shell: fish -c "fisher install {{ item }}"
   with_items: '{{ fisher_packages }}'
