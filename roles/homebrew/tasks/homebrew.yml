@@ -14,6 +14,12 @@
     state: '{{ item.state | default("present") }}'
   with_items: '{{ homebrew_packages }}'
 
+- name: install ricty with powerline
+  homebrew:
+    name: ricty
+    state: present
+    install_options: with-powerline
+
 - name: install homebrew cask packages
   homebrew:
     name: '{{ item.name }}'
