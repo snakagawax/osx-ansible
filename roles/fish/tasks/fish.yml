@@ -2,12 +2,6 @@
 - name: Install fisherman
   shell: curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
 
-- name: fish のインストール済みプラグイン
-  command: /usr/local/bin/fish -c "fisher ls"
-  register: fisher
-  changed_when: false
-
-- name: fish プラグインをインストール
+- name: 
   command: /usr/local/bin/fish -c "fisher install '{{item.name}}'"
   with_items: '{{ fisher_packages }}'
-  when: "'{{item.id}}' not in fisher.stdout"
