@@ -1,6 +1,5 @@
 ---
 fisher_packages:
-  - { name:  }
   - { name: oh-my-fish/theme-bobthefish }
   - { name: 0rax/fish-bd }
   - { name: jethrokuan/z }
