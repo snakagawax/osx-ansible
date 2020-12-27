@@ -1,9 +1,0 @@
----
-- name: Fetch AWS CLI v2
-  uri:
-    url: https://awscli.amazonaws.com/AWSCLIV2.pkg
-    return_content: yes
-  register: get_aws_cli_v2
- 
-- name: Install AWS CLI v2!
-  shell: "{{ get_aws_cli_v2.content }}"

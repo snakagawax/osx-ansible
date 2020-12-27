@@ -1,4 +1,4 @@
 ---
 pip3_packages:
-  - { name: awscli }
-  - { name: cfn_flip }
+  - { name: boto3 }
+  - { name: cfn-lint }
