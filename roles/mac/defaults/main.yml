@@ -56,11 +56,6 @@ osx_defaults:
     type: bool
     value: true
 
-  - domain: com.apple.desktopservices
-    key: DSDontWriteNetworkStores
-    type: bool
-    value: true
-
   - domain: com.apple.screencapture
     key: name
     type: string

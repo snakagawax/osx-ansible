@@ -6,3 +6,4 @@
     accept_hostkey: yes
   with_items:
     - "{{ git_repositories }}"
+  failed_when: no
