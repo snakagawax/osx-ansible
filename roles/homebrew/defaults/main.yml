@@ -36,5 +36,6 @@ homebrew_cask_packages:
   - { name: google-chrome }
   - { name: google-japanese-ime }
   - { name: iterm2 }
+  - { name: karabiner-elements }
   - { name: skitch }
   - { name: visual-studio-code }
