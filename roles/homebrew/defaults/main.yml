@@ -37,4 +37,5 @@ homebrew_cask_packages:
   - { name: iterm2 }
   - { name: karabiner-elements }
   - { name: skitch }
+  - { name: spectacle }
   - { name: visual-studio-code }
