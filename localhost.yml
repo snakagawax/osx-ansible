@@ -9,5 +9,4 @@
     - { role: lang, tags: [ lang ] }
     - { role: mac, tags: [ mac ] }
     - { role: mas, tags: [ mas ] }
-    - { role: ricty, tags: [ ricty ] }
     - { role: vscode, tags: [ vscode ] }
