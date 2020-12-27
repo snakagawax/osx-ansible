@@ -1,8 +1,0 @@
----
-- name: setup osx
-  hosts: local
-  connection: local
-  roles:
-    - { role: mac, tags: [ mac ] }
-    - { role: fish, tags: [ fish ] }
-    - { role: ricty, tags: [ ricty ] }
