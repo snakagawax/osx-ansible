@@ -1,1 +1,12 @@
 ---
+fisher_packages:
+  - { name:  }
+  - { name: oh-my-fish/theme-bobthefish }
+  - { name: 0rax/fish-bd }
+  - { name: jethrokuan/z }
+  - { name: oh-my-fish/plugin-peco }
+  - { name: yoshiori/fish-peco_select_ghq_repository }
+  - { name: FabioAntunes/fish-nvm }
+  - { name: edc/bass }
+  - { name: decors/fish-ghq }
+  - { name: jorgebucaran/fisher }
