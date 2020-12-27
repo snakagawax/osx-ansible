@@ -29,7 +29,6 @@ homebrew_packages:
   - { name: q }
 
 homebrew_cask_packages:
-  - { name: alfred }
   - { name: cheatsheet }
   - { name: clipy }
   - { name: docker }

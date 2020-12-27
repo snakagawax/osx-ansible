@@ -30,7 +30,7 @@
   brew install ansible
 
   # git clone
-  ANSIBLE_DIR=${HOME}/.ghq/github.com/snakagawax
+  ANSIBLE_DIR=${HOME}/ghq/github.com/snakagawax
   mkdir -p ${ANSIBLE_DIR}
   cd ${ANSIBLE_DIR}
   git clone https://github.com/snakagawax/osx-ansible.git
