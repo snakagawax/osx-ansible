@@ -27,7 +27,6 @@ homebrew_packages:
   - { name: tflint }
   - { name: terminal-notifier }
   - { name: q }
-  - { name: rmtrash }
 
 homebrew_cask_packages:
   - { name: alfred }
