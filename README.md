@@ -46,7 +46,7 @@
 
 - Run playbook.
   ```
-  $ ansible-playbook localhost.yml --ask-vault-pass
+  $ ansible-playbook localhost.yml
   ```
 
 ## Reference
