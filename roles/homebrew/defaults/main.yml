@@ -25,12 +25,17 @@ homebrew_packages:
   - { name: terminal-notifier }
 
 homebrew_cask_packages:
+  - { name: 1password-cli }
   - { name: cheatsheet }
   - { name: clipy }
   - { name: google-chrome }
   - { name: google-japanese-ime }
   - { name: iterm2 }
   - { name: karabiner-elements }
+  - { name: kindle }
+  - { name: notion }
+  - { name: qlmarkdown }
   - { name: skitch }
   - { name: spectacle }
+  - { name: typora }
   - { name: visual-studio-code }
