@@ -8,4 +8,3 @@ fisher_packages:
   - { name: FabioAntunes/fish-nvm }
   - { name: edc/bass }
   - { name: decors/fish-ghq }
-  - { name: jorgebucaran/fisher }
