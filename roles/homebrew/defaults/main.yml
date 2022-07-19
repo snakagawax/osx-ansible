@@ -20,18 +20,13 @@ homebrew_packages:
   - { name: nkf }
   - { name: jq }
   - { name: direnv }
-  - { name: graphviz }
-  - { name: kubernetes-cli }
-  - { name: mas }
   - { name: tfenv }
   - { name: tflint }
   - { name: terminal-notifier }
-  - { name: q }
 
 homebrew_cask_packages:
   - { name: cheatsheet }
   - { name: clipy }
-  - { name: docker }
   - { name: google-chrome }
   - { name: google-japanese-ime }
   - { name: iterm2 }

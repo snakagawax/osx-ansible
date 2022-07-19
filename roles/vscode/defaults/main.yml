@@ -1,12 +1,5 @@
 ---
 vscode_extensions:
-  - { name: adpyke.vscode-sql-formatter }
   - { name: amazonwebservices.aws-toolkit-vscode }
-  - { name: aws-scripting-guy.cform }
-  - { name: DavidAnson.vscode-markdownlint }
-  - { name: hashicorp.terraform }
-  - { name: kddejong.vscode-cfn-lint }
-  - { name: ms-azuretools.vscode-docker }
-  - { name: ms-vscode-remote.remote-containers }
   - { name: redhat.vscode-yaml }
   - { name: yzhang.markdown-all-in-one }

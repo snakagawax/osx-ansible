@@ -1,4 +1,0 @@
----
-- name: Install AppStore applications
-  command: mas install "{{ item.id }}"
-  with_items: "{{ mas }}"
