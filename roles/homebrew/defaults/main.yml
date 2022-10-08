@@ -1,6 +1,8 @@
 ---
 homebrew_taps:
   - sanemat/font
+  - mackerelio/mackerel-agent
+  - aws/tap
 
 homebrew_packages:
   - { name: readline }
@@ -13,7 +15,6 @@ homebrew_packages:
   - { name: ghq }
   - { name: hub }
   - { name: peco }
-  - { name: fish }
   - { name: curl }
   - { name: wget }
   - { name: tree }
@@ -23,6 +24,10 @@ homebrew_packages:
   - { name: tfenv }
   - { name: tflint }
   - { name: terminal-notifier }
+  - { name: mkr }
+  - { name: java }
+  - { name: docker }
+  - { name: aws-sam-cli}
 
 homebrew_cask_packages:
   - { name: 1password-cli }
@@ -32,6 +37,7 @@ homebrew_cask_packages:
   - { name: google-japanese-ime }
   - { name: iterm2 }
   - { name: karabiner-elements }
+  - { name: docker }
   - { name: kindle }
   - { name: notion }
   - { name: qlmarkdown }
