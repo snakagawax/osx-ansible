@@ -1,0 +1,43 @@
+---
+- name: Install Fish shell dependencies via Homebrew
+  homebrew:
+    name: "{{ fish_homebrew_packages }}"
+    state: present
+  tags:
+    - fish_dependencies
+    - homebrew
+
+- name: Check if Python pip is available
+  command: python3 -m pip --version
+  register: pip_check
+  failed_when: false
+  changed_when: false
+
+- name: Install Fish-related Python packages
+  pip:
+    name: "{{ fish_pip_packages }}"
+    state: present
+    executable: pip3
+  when: pip_check.rc == 0
+  tags:
+    - fish_dependencies
+    - python
+
+- name: Set Fish as default shell
+  user:
+    name: "{{ ansible_user_id }}"
+    shell: /opt/homebrew/bin/fish
+  become: true
+  tags:
+    - fish_dependencies
+    - shell
+    - sudo_required
+
+- name: Verify Fish installation
+  command: /opt/homebrew/bin/fish --version
+  register: fish_version
+  changed_when: false
+
+- name: Display Fish version
+  debug:
+    msg: "Fish shell version: {{ fish_version.stdout }}"

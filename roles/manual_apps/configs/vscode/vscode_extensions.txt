@@ -1,0 +1,16 @@
+4ops.terraform
+amazonwebservices.aws-toolkit-vscode
+anthropic.claude-code
+cweijan.dbclient-jdbc
+cweijan.vscode-mysql-client2
+docker.docker
+hashicorp.terraform
+janisdd.vscode-edit-csv
+kddejong.vscode-cfn-lint
+marp-team.marp-vscode
+mechatroner.rainbow-csv
+ms-ceintl.vscode-language-pack-ja
+ms-python.python
+shd101wyy.markdown-preview-enhanced
+undefined_publisher.devio-extension
+yzhang.markdown-all-in-one

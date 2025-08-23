@@ -1,0 +1,28 @@
+---
+all:
+  hosts:
+    local:
+      ansible_connection: local
+      ansible_python_interpreter: "{{ ansible_playbook_python }}"
+  vars:
+    # Fish shell settings
+    fish_config_dir: "{{ ansible_env.HOME }}/.config/fish"
+    fish_plugins_backup_dir: "{{ ansible_env.HOME }}/.config/fish.backup.{{ ansible_date_time.date }}"
+    
+    # Development tools versions (for mise)
+    global_tools:
+      python: "3.11.7"
+      node: "20.11.0"
+      terraform: "1.6.6"
+    
+    # App Store applications (manual install)
+    appstore_apps:
+      - { name: "Amazon Kindle", id: "302584613" }
+      - { name: "Keynote", id: "409183694" }
+      - { name: "Microsoft Remote Desktop", id: "1295203466" }
+      - { name: "Numbers", id: "409203825" }
+      - { name: "Pages", id: "409201541" }
+      - { name: "Slack", id: "803453959" }
+      - { name: "Xcode", id: "497799835" }
+      - { name: "Xmind", id: "1327661892" }
+      - { name: "iMovie", id: "408981434" }

@@ -1,0 +1,113 @@
+---
+- name: Ensure config directories exist
+  file:
+    path: "{{ item }}"
+    state: directory
+    mode: '0755'
+  loop:
+    - "{{ ansible_env.HOME }}/.config"
+  tags:
+    - dotfiles
+    - directories
+
+- name: Check if dotfiles repository exists
+  stat:
+    path: "{{ dotfiles_dir }}"
+  register: dotfiles_exists
+
+- name: Verify dotfiles repository is up to date
+  git:
+    repo: "{{ dotfiles_repo }}"
+    dest: "{{ dotfiles_dir }}"
+    version: HEAD
+    update: yes
+  when: dotfiles_exists.stat.exists
+  tags:
+    - dotfiles
+    - git
+
+- name: Backup existing files if they exist
+  copy:
+    src: "{{ item.dest }}"
+    dest: "{{ item.dest }}{{ backup_suffix }}"
+    remote_src: true
+    mode: preserve
+  loop: "{{ dotfiles_links }}"
+  when: 
+    - dotfiles_exists.stat.exists
+    - backup_enabled
+  failed_when: false
+  tags:
+    - dotfiles
+    - backup
+
+- name: Remove existing directories for symlinks
+  file:
+    path: "{{ item.dest }}"
+    state: absent
+  loop: "{{ dotfiles_links }}"
+  when: 
+    - dotfiles_exists.stat.exists
+    - item.src in ['.config/fish', '.config/karabiner']
+  tags:
+    - dotfiles
+    - cleanup
+
+- name: Create symbolic links for dotfiles
+  file:
+    src: "{{ dotfiles_dir }}/{{ item.src }}"
+    dest: "{{ item.dest }}"
+    state: link
+    force: yes
+  loop: "{{ dotfiles_links }}"
+  when: dotfiles_exists.stat.exists
+  tags:
+    - dotfiles
+    - links
+
+- name: Install Fisher plugins (if Fish is available)
+  block:
+    - name: Check if Fish shell is available
+      command: which fish
+      register: fish_available
+      failed_when: false
+      changed_when: false
+
+    - name: Update Fisher plugins
+      command: "{{ fish_available.stdout }} -c 'fisher update'"
+      register: fisher_update
+      failed_when: false
+      changed_when: "'up to date' not in fisher_update.stderr"
+      when: 
+        - fish_available.rc == 0
+        - dotfiles_exists.stat.exists
+
+    - name: Display Fisher plugin update results
+      debug:
+        msg: "Fisher plugins updated: {{ fisher_update.stderr if fisher_update.stderr else 'No output' }}"
+      when: 
+        - fish_available.rc == 0
+        - fisher_update is defined
+  tags:
+    - dotfiles
+    - fisher
+    - plugins
+
+- name: Verify dotfiles setup
+  block:
+    - name: Check symbolic links
+      stat:
+        path: "{{ item.dest }}"
+      register: link_check
+      loop: "{{ dotfiles_links }}"
+
+    - name: Display setup summary
+      debug:
+        msg: |
+          Dotfiles setup complete!
+          Repository: {{ dotfiles_dir }}
+          Links created: {{ dotfiles_links | length }}
+          Fish configuration: {{ 'Active' if fish_available is defined and fish_available.rc == 0 else 'Not available' }}
+  tags:
+    - dotfiles
+    - verification

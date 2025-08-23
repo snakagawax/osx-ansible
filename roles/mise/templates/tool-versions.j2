@@ -1,0 +1,11 @@
+# Development environment versions
+# Managed by Ansible mise role
+# This file defines global tool versions for your development environment
+{% for tool, version in tools.items() %}
+{{ tool }} {{ version }}
+{% endfor %}
+
+# Usage:
+# - Copy this file to your project root as .tool-versions
+# - Modify versions as needed for specific projects
+# - Run 'mise install' to install project-specific versions

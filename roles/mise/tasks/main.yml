@@ -1,0 +1,81 @@
+---
+- name: Install mise via Homebrew
+  homebrew:
+    name: mise
+    state: present
+  tags:
+    - mise
+    - homebrew
+
+- name: Verify mise installation
+  command: mise --version
+  register: mise_version
+  changed_when: false
+
+- name: Display mise version
+  debug:
+    msg: "mise version: {{ mise_version.stdout }}"
+
+- name: Create mise configuration directory
+  file:
+    path: "{{ mise_config_dir }}"
+    state: directory
+    mode: '0755'
+
+- name: Install global development tools
+  block:
+    - name: Install each global tool
+      command: mise install {{ item.key }}@{{ item.value }}
+      register: tool_install
+      failed_when: false
+      changed_when: "'already installed' not in tool_install.stderr"
+      loop: "{{ mise_global_tools | dict2items }}"
+      tags:
+        - mise_tools
+
+    - name: Set global versions for tools
+      command: mise global {{ item.key }}@{{ item.value }}
+      loop: "{{ mise_global_tools | dict2items }}"
+      changed_when: true
+      tags:
+        - mise_global
+
+- name: Create global .tool-versions file
+  template:
+    src: tool-versions.j2
+    dest: "{{ ansible_env.HOME }}/.tool-versions"
+    mode: '0644'
+    backup: true
+  vars:
+    tools: "{{ mise_global_tools }}"
+
+- name: Configure mise for Fish shell
+  block:
+    - name: Add mise activation to Fish config
+      lineinfile:
+        path: "{{ ansible_env.HOME }}/.config/fish/conf.d/mise.fish"
+        line: "{{ mise_fish_config }}"
+        create: true
+        mode: '0644'
+      when: mise_fish_integration
+
+    - name: Verify mise Fish integration
+      command: /opt/homebrew/bin/fish -c "mise list"
+      register: mise_fish_test
+      failed_when: false
+      changed_when: false
+
+- name: Create project .tool-versions template
+  template:
+    content: "{{ mise_tool_versions_template }}"
+    dest: "{{ ansible_env.HOME }}/Downloads/tool-versions.template"
+    mode: '0644'
+
+- name: mise setup completion
+  debug:
+    msg: |
+      mise development environment setup complete!
+      - Global tools: {{ mise_global_tools.keys() | list | join(', ') }}
+      - Fish integration: {{ 'enabled' if mise_fish_integration else 'disabled' }}
+      - Global config: ~/.tool-versions
+      - Project template: ~/Downloads/tool-versions.template

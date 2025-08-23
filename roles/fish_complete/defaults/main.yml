@@ -1,0 +1,44 @@
+---
+# Fish configuration management settings
+fish_config_source: "{{ ansible_env.HOME }}/.config/fish"
+fish_backup_enabled: true
+fish_restore_on_failure: true
+
+# Fisher plugin management
+fisher_url: "https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish"
+
+# Configuration files to manage
+fish_config_files:
+  - config.fish
+  - fish_plugins
+  - fish_variables
+  - starship.toml
+
+# Directories to manage (symlink entire directories)
+fish_config_dirs:
+  - functions
+  - completions
+  - conf.d
+  - themes
+
+# Custom functions that require special handling
+critical_functions:
+  - fisher.fish
+  - fish_prompt.fish
+  - __bobthefish_colors.fish
+  - __ghq_repository_search.fish
+  - peco_select_ghq_repository.fish
+
+# Fisher plugins from fish_plugins file
+expected_plugins:
+  - oh-my-fish/theme-bobthefish
+  - 0rax/fish-bd  
+  - jethrokuan/z
+  - oh-my-fish/plugin-peco
+  - yoshiori/fish-peco_select_ghq_repository
+  - fabioantunes/fish-nvm
+  - edc/bass
+  - decors/fish-ghq
+  - jorgebucaran/nvm.fish
+  - patrickf1/fzf.fish
+  - acomagu/fish-async-prompt

@@ -1,0 +1,27 @@
+---
+# Fish shell dependencies via Homebrew
+fish_homebrew_packages:
+  - fish           # Fish shell itself
+  - peco           # Interactive filtering tool
+  - fzf            # Fuzzy finder
+  - ghq            # Git repository management
+  - nvm            # Node.js version manager
+  - starship       # Cross-shell prompt
+
+# Python packages for Fish tools
+fish_pip_packages:
+  - awsume         # AWS CLI profile management
+
+# Fisher plugins (managed by fish_complete role)
+fisher_plugins:
+  - oh-my-fish/theme-bobthefish
+  - 0rax/fish-bd
+  - jethrokuan/z
+  - oh-my-fish/plugin-peco
+  - yoshiori/fish-peco_select_ghq_repository
+  - fabioantunes/fish-nvm
+  - edc/bass
+  - decors/fish-ghq
+  - jorgebucaran/nvm.fish
+  - patrickf1/fzf.fish
+  - acomagu/fish-async-prompt

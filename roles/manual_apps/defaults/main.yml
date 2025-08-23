@@ -1,0 +1,133 @@
+---
+# Manual installation applications and tools
+# These require manual installation due to licensing, authentication, or policy restrictions
+
+# App Store applications (cannot be automated reliably)
+appstore_manual_apps:
+  - name: "Amazon Kindle"
+    id: "302584613"
+    category: "Productivity"
+    reason: "Apple ID authentication required"
+    
+  - name: "Keynote"
+    id: "409183694"
+    category: "Productivity"
+    reason: "Apple ID authentication required"
+    
+  - name: "Microsoft Remote Desktop"
+    id: "1295203466"
+    category: "Utilities"
+    reason: "Corporate authentication may be required"
+    
+  - name: "Numbers"
+    id: "409203825"
+    category: "Productivity"
+    reason: "Apple ID authentication required"
+    
+  - name: "Pages"
+    id: "409201541"
+    category: "Productivity"
+    reason: "Apple ID authentication required"
+    
+  - name: "Slack"
+    id: "803453959"
+    category: "Communication"
+    reason: "Team/workspace configuration required"
+    
+  - name: "Xcode"
+    id: "497799835"
+    category: "Developer Tools"
+    reason: "Large download, Apple ID required"
+    
+  - name: "Xmind"
+    id: "1327661892"
+    category: "Productivity"
+    reason: "License activation may be required"
+    
+  - name: "iMovie"
+    id: "408981434"
+    category: "Photo & Video"
+    reason: "Apple ID authentication required"
+
+# Direct download applications
+direct_download_apps:
+  - name: "Docker Desktop"
+    url: "https://www.docker.com/products/docker-desktop"
+    reason: "License agreement and account registration required"
+    
+  - name: "JetBrains IDEs"
+    url: "https://www.jetbrains.com/toolbox-app/"
+    reason: "License activation required"
+    
+  - name: "Adobe Creative Suite"
+    url: "https://creative.adobe.com/"
+    reason: "Subscription and license activation required"
+
+# Manual download from official websites (no package manager available)
+official_website_apps:
+  - name: "Alfred 5"
+    url: "https://www.alfredapp.com/"
+    reason: "No homebrew cask available for latest version"
+    
+  - name: "Claude"
+    url: "https://claude.ai/desktop"
+    reason: "Official desktop app from Anthropic"
+    
+  - name: "Clipy"
+    url: "https://clipy-app.com/"
+    reason: "Official website installation required"
+    
+  - name: "Flux"
+    url: "https://justgetflux.com/"
+    reason: "Official website installation recommended"
+    
+  - name: "Spectacle"
+    url: "https://www.spectacleapp.com/"
+    reason: "Legacy app, official website only"
+    
+  - name: "Skitch"
+    url: "https://evernote.com/products/skitch"
+    reason: "Evernote official distribution"
+    
+  - name: "iTerm2"
+    url: "https://iterm2.com/"
+    reason: "Official website for latest features"
+    
+  - name: "Typora"
+    url: "https://typora.io/"
+    reason: "Official website with license management"
+    
+  - name: "Visual Studio Code"
+    url: "https://code.visualstudio.com/"
+    reason: "Microsoft official distribution"
+
+# Apps requiring configuration migration
+config_migration_apps:
+  - name: "Karabiner-Elements"
+    config_path: "~/.config/karabiner/karabiner.json"
+    backup_dir: "configs/karabiner"
+    
+  - name: "Alfred 5"
+    config_path: "~/Library/Application Support/Alfred/Alfred.alfredpreferences"
+    backup_dir: "configs/alfred"
+    
+  - name: "iTerm2"
+    config_path: "~/Library/Preferences/com.googlecode.iterm2.plist"
+    backup_dir: "configs/iterm"
+    
+  - name: "Visual Studio Code"
+    config_path: "~/Library/Application Support/Code/User/"
+    backup_dir: "configs/vscode"
+
+# Enterprise/Corporate tools
+enterprise_apps:
+  - name: "VPN Client"
+    reason: "Corporate-specific configuration required"
+    
+  - name: "Company-specific tools"
+    reason: "Internal distribution only"
+
+# Guide output settings
+guide_output_dir: "{{ ansible_env.HOME }}/Desktop"
+guide_filename: "MANUAL_INSTALLATION_GUIDE.md"
+appstore_guide_filename: "APP_STORE_APPS.md"

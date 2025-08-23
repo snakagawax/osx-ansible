@@ -1,0 +1,51 @@
+---
+- name: Generate App Store installation guide
+  template:
+    src: appstore_guide.md.j2
+    dest: "{{ guide_output_dir }}/{{ appstore_guide_filename }}"
+    mode: '0644'
+  tags:
+    - manual_apps
+    - appstore
+
+- name: Generate comprehensive manual installation guide
+  template:
+    src: manual_installation_guide.md.j2
+    dest: "{{ guide_output_dir }}/{{ guide_filename }}"
+    mode: '0644'
+  tags:
+    - manual_apps
+    - guide
+
+- name: Create quick reference script for App Store apps
+  template:
+    src: install_appstore_apps.sh.j2
+    dest: "{{ guide_output_dir }}/install_appstore_apps.sh"
+    mode: '0755'
+  tags:
+    - manual_apps
+    - script
+
+- name: Display manual installation information
+  debug:
+    msg: |
+      Manual installation guides created on Desktop:
+      
+      📱 App Store Apps: {{ appstore_guide_filename }}
+         - {{ appstore_manual_apps | length }} apps requiring manual installation
+         - Includes App Store IDs and direct links
+      
+      📋 Complete Guide: {{ guide_filename }}
+         - App Store apps ({{ appstore_manual_apps | length }} items)
+         - Direct download apps ({{ direct_download_apps | length }} items)
+         - Enterprise tools ({{ enterprise_apps | length }} items)
+      
+      🔧 Helper Script: install_appstore_apps.sh
+         - Open all App Store apps in one command
+         - Run from Terminal: ./install_appstore_apps.sh
+      
+      Next steps:
+      1. Open the guides from your Desktop
+      2. Install App Store apps using Apple ID
+      3. Download and install direct apps
+      4. Configure enterprise tools as needed

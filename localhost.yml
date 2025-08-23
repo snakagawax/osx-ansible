@@ -4,8 +4,12 @@
   connection: local
   roles:
     - { role: homebrew, tags: [ homebrew ] }
+    - { role: fish_dependencies, tags: [ fish_dependencies ] }
+    - { role: mise, tags: [ mise ] }
     - { role: fish, tags: [ fish ] }
     - { role: git, tags: [ git ] }
+    - { role: dotfiles, tags: [ dotfiles ] }
     - { role: lang, tags: [ lang ] }
     - { role: mac, tags: [ mac ] }
     - { role: vscode, tags: [ vscode ] }
+    - { role: manual_apps, tags: [ manual_apps ] }

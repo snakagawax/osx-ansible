@@ -8,7 +8,6 @@ homebrew_packages:
   - { name: readline }
   - { name: openssl }
   - { name: coreutils }
-  - { name: python3 }
   - { name: ansible }
   - { name: git }
   - { name: git-secrets}
@@ -25,9 +24,13 @@ homebrew_packages:
   - { name: tflint }
   - { name: terminal-notifier }
   - { name: mkr }
-  - { name: java }
-  - { name: docker }
-  - { name: aws-sam-cli}
+  - { name: grep }
+  # Fish shell and development environment
+  - { name: fish }
+  - { name: fzf }
+  - { name: mise }
+  - { name: starship }
+  - { name: nvm }
 
 homebrew_cask_packages:
   - { name: 1password-cli }

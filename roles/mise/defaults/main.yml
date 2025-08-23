@@ -1,0 +1,40 @@
+---
+# mise (development tools version manager) configuration
+mise_install_method: homebrew
+
+# Global tools configuration
+# Based on command usage analysis: aws(38), python(17), terraform(11)
+mise_global_tools:
+  python: "3.11.7"
+  node: "20.11.0"
+  terraform: "1.6.6"
+  awscli: "latest"
+
+# Project-specific .tool-versions template
+mise_tool_versions_template: |
+  # Development environment versions
+  # Managed by Ansible - modify global_tools in inventories/local.yml
+  {% for tool, version in mise_global_tools.items() %}
+  {{ tool }} {{ version }}
+  {% endfor %}
+
+# mise configuration settings
+mise_config_dir: "{{ ansible_env.HOME }}/.config/mise"
+mise_config_toml: |
+  [settings]
+  experimental = false
+  verbose = false
+  
+  [tools]
+  # Global tool settings
+  python = { versions = ["{{ mise_global_tools.python }}"] }
+  node = { versions = ["{{ mise_global_tools.node }}"] }
+  terraform = { versions = ["{{ mise_global_tools.terraform }}"] }
+
+# Fish shell integration
+mise_fish_integration: true
+mise_fish_config: |
+  # mise (development tools) integration
+  if command -v mise >/dev/null
+      mise activate fish | source
+  end

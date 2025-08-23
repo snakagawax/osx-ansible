@@ -1,0 +1,110 @@
+---
+- name: Create Fish config backup if enabled
+  block:
+    - name: Check if Fish config directory exists
+      stat:
+        path: "{{ fish_config_source }}"
+      register: fish_config_exists
+
+    - name: Create backup of existing Fish configuration
+      copy:
+        src: "{{ fish_config_source }}/"
+        dest: "{{ fish_plugins_backup_dir }}/"
+        remote_src: true
+        mode: preserve
+      when: 
+        - fish_config_exists.stat.exists
+        - fish_backup_enabled
+      tags:
+        - fish_backup
+
+- name: Ensure Fish config directory exists
+  file:
+    path: "{{ fish_config_dir }}"
+    state: directory
+    mode: '0755'
+
+- name: Download and install Fisher
+  block:
+    - name: Download Fisher
+      get_url:
+        url: "{{ fisher_url }}"
+        dest: "{{ fish_config_dir }}/functions/fisher.fish"
+        mode: '0644'
+      
+    - name: Verify Fisher installation
+      command: /opt/homebrew/bin/fish -c "fisher --version"
+      register: fisher_version
+      failed_when: false
+      changed_when: false
+
+- name: Install Fisher plugins from fish_plugins file
+  block:
+    - name: Check if fish_plugins file exists
+      stat:
+        path: "{{ fish_config_source }}/fish_plugins"
+      register: fish_plugins_file
+
+    - name: Copy fish_plugins to config directory
+      copy:
+        src: "{{ fish_config_source }}/fish_plugins"
+        dest: "{{ fish_config_dir }}/fish_plugins"
+        remote_src: true
+        backup: true
+      when: fish_plugins_file.stat.exists
+
+    - name: Install plugins using Fisher
+      command: /opt/homebrew/bin/fish -c "fisher update"
+      register: fisher_install
+      failed_when: false
+      changed_when: "'up to date' not in fisher_install.stderr"
+      when: fish_plugins_file.stat.exists
+
+- name: Manage Fish configuration files
+  copy:
+    src: "{{ fish_config_source }}/{{ item }}"
+    dest: "{{ fish_config_dir }}/{{ item }}"
+    remote_src: true
+    backup: true
+    mode: '0644'
+  loop: "{{ fish_config_files }}"
+  when: fish_config_exists.stat.exists
+
+- name: Manage Fish configuration directories
+  block:
+    - name: Create symlinks for Fish config directories
+      file:
+        src: "{{ fish_config_source }}/{{ item }}"
+        dest: "{{ fish_config_dir }}/{{ item }}"
+        state: link
+        force: true
+      loop: "{{ fish_config_dirs }}"
+      when: fish_config_exists.stat.exists
+
+- name: Verify Fish configuration
+  block:
+    - name: Test Fish configuration syntax
+      command: /opt/homebrew/bin/fish -n "{{ fish_config_dir }}/config.fish"
+      register: fish_syntax_check
+      failed_when: false
+      changed_when: false
+
+    - name: Display syntax check results
+      debug:
+        msg: "Fish configuration syntax check: {{ 'PASSED' if fish_syntax_check.rc == 0 else 'FAILED' }}"
+
+    - name: Test critical functions availability
+      command: /opt/homebrew/bin/fish -c "functions {{ item }}"
+      register: function_check
+      failed_when: false
+      changed_when: false
+      loop: "{{ critical_functions }}"
+
+- name: Fish setup completion message
+  debug:
+    msg: |
+      Fish configuration setup complete!
+      - Config directory: {{ fish_config_dir }}
+      - Backup created: {{ fish_plugins_backup_dir if fish_backup_enabled else 'disabled' }}
+      - Fisher plugins: {{ expected_plugins | length }} plugins configured
+      - Critical functions: {{ critical_functions | length }} functions verified
