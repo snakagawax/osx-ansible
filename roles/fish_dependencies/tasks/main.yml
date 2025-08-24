@@ -7,21 +7,31 @@
     - fish_dependencies
     - homebrew
 
-- name: Check if Python pip is available
-  command: python3 -m pip --version
-  register: pip_check
+- name: Ensure pip and packaging are available
+  command: python3 -m pip install --upgrade pip packaging
+  register: pip_upgrade
+  changed_when: "'Successfully installed' in pip_upgrade.stdout"
   failed_when: false
-  changed_when: false
+  tags:
+    - fish_dependencies
+    - python
 
 - name: Install Fish-related Python packages
   pip:
     name: "{{ fish_pip_packages }}"
     state: present
     executable: pip3
-  when: pip_check.rc == 0
+  when: fish_pip_packages | length > 0
+  failed_when: false
+  register: pip_result
   tags:
     - fish_dependencies
     - python
+
+- name: Show Python packages installation result
+  debug:
+    msg: "Python packages installation: {{ 'Success' if pip_result.rc == 0 else 'Skipped or failed (optional)' }}"
+  when: pip_result is defined
 
 - name: Set Fish as default shell
   user:
