@@ -42,7 +42,6 @@ homebrew_cask_packages:
   - { name: karabiner-elements }
   - { name: docker }
   - { name: kindle }
-  - { name: notion }
   - { name: qlmarkdown }
   - { name: skitch }
   - { name: spectacle }

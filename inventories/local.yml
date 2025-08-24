@@ -11,9 +11,9 @@ all:
     
     # Development tools versions (for mise)
     global_tools:
-      python: "3.11.7"
-      node: "20.11.0"
-      terraform: "1.6.6"
+      python: "latest"
+      node: "latest"
+      terraform: "latest"
     
     # App Store applications (manual install)
     appstore_apps:

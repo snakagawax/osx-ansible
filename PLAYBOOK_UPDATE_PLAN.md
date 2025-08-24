@@ -42,9 +42,9 @@ dependencies:
 
 # defaults/main.yml
 mise_tools:
-  - "node 20.11.0"
-  - "python 3.11.7"
-  - "terraform 1.6.6"
+  - "node latest"
+  - "python latest"
+  - "terraform latest"
   - "aws-cli 2.15.0"
 ```
 
@@ -121,9 +121,9 @@ all:
 
 #### .tool-versions テンプレート
 ```
-node 20.11.0
-python 3.11.7
-terraform 1.6.6
+node latest
+python latest
+terraform latest
 awscli 2.15.0
 ```
 

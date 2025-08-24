@@ -10,12 +10,12 @@
 
 ## 対象ツール（使用頻度分析結果）
 ### 高頻度ツール
-- `python` (17回) → Python 3.11.7
+- `python` (17回) → Python latest
 - `aws` (38回) → AWS CLI 2.15.0  
-- `terraform` (11回) → Terraform 1.6.6
+- `terraform` (11回) → Terraform latest
 
 ### 追加すべき開発ツール
-- Node.js 20.11.0 (フロントエンド開発)
+- Node.js latest (フロントエンド開発)
 - Go latest (Go開発)
 - Ruby 3.2.0 (スクリプト・ツール開発)
 
@@ -37,9 +37,9 @@ roles/mise/
 ---
 # miseで管理するツール・バージョン
 mise_tools:
-  python: "3.11.7"
-  nodejs: "20.11.0"
-  terraform: "1.6.6"
+  python: "latest"
+  nodejs: "latest"
+  terraform: "latest"
   awscli: "2.15.0"
   golang: "1.21.5"
   ruby: "3.2.0"

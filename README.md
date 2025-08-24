@@ -78,13 +78,13 @@ ansible-playbook -i inventories/local.yml localhost.yml --skip-tags "sudo_requir
 - Fish shell with complete configuration
 - mise (development environment manager)
 - Git, GitHub CLI (hub)
-- Python 3.11.7, Node.js 20.11.0, Terraform 1.6.6
+- Python, Node.js, Terraform (latest versions)
 - AWS CLI, Docker, kubectl
 
 **Productivity Apps:**
 - iTerm2, Visual Studio Code
 - Google Chrome, 1Password CLI
-- Notion, Typora, Kindle
+- Typora, Kindle
 
 **Fish Shell Features:**
 - Bobthefish theme with Powerline fonts
@@ -135,9 +135,9 @@ Edit configuration in `inventories/local.yml`:
 ```yaml
 # Development tools versions
 global_tools:
-  python: "3.11.7"
-  node: "20.11.0" 
-  terraform: "1.6.6"
+  python: "latest"
+  node: "latest" 
+  terraform: "latest"
 
 # App Store applications
 appstore_apps:

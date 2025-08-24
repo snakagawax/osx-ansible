@@ -1,8 +1,6 @@
 ---
 # Dotfiles management configuration
-dotfiles_repo: "https://github.com/snakagawax/dotfiles.git"
-dotfiles_dir: "{{ ghq_root }}/snakagawax/dotfiles"
-ghq_root: "{{ ansible_env.HOME }}/ghq/github.com"
+# Note: dotfiles_dir will be set dynamically from ghq list --full-path
 
 # Symbolic link mappings
 dotfiles_links:

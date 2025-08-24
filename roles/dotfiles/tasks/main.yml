@@ -10,21 +10,27 @@
     - dotfiles
     - directories
 
+- name: Install/Update dotfiles repository via ghq
+  command: ghq get -u snakagawax/dotfiles
+  register: ghq_result
+  changed_when: "'already exists' not in ghq_result.stderr"
+  tags:
+    - dotfiles
+    - ghq
+
+- name: Get dotfiles actual path from ghq
+  command: ghq list --full-path snakagawax/dotfiles
+  register: dotfiles_path_result
+  changed_when: false
+
+- name: Set dotfiles directory from ghq path
+  set_fact:
+    dotfiles_dir: "{{ dotfiles_path_result.stdout.strip() }}"
+
 - name: Check if dotfiles repository exists
   stat:
     path: "{{ dotfiles_dir }}"
   register: dotfiles_exists
-
-- name: Verify dotfiles repository is up to date
-  git:
-    repo: "{{ dotfiles_repo }}"
-    dest: "{{ dotfiles_dir }}"
-    version: HEAD
-    update: yes
-  when: dotfiles_exists.stat.exists
-  tags:
-    - dotfiles
-    - git
 
 - name: Backup existing files if they exist
   copy:

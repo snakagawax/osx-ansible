@@ -39,33 +39,10 @@ official_website_apps:
     url: "https://claude.ai/desktop"
     reason: "Official desktop app from Anthropic"
     
-  - name: "Clipy"
-    url: "https://clipy-app.com/"
-    reason: "Official website installation required"
-    
   - name: "Flux"
     url: "https://justgetflux.com/"
     reason: "Official website installation recommended"
     
-  - name: "Spectacle"
-    url: "https://www.spectacleapp.com/"
-    reason: "Legacy app, official website only"
-    
-  - name: "Skitch"
-    url: "https://evernote.com/products/skitch"
-    reason: "Evernote official distribution"
-    
-  - name: "iTerm2"
-    url: "https://iterm2.com/"
-    reason: "Official website for latest features"
-    
-  - name: "Typora"
-    url: "https://typora.io/"
-    reason: "Official website with license management"
-    
-  - name: "Visual Studio Code"
-    url: "https://code.visualstudio.com/"
-    reason: "Microsoft official distribution"
 
 # Apps requiring configuration migration
 config_migration_apps:

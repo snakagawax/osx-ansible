@@ -35,10 +35,6 @@ manual_install_apps:
     category: "Security"
     reason: "個人アカウント設定"
     
-  - name: "Notion"
-    category: "Productivity"
-    reason: "アカウント連携"
-    
   # デザイン・メディア
   - name: "Figma"
     category: "Design"
@@ -106,7 +102,6 @@ apps/
   - [ ] PyCharm
 
 ### 生産性
-- [ ] Notion
 - [ ] Figma
 ```
 

@@ -5,9 +5,9 @@ mise_install_method: homebrew
 # Global tools configuration
 # Based on command usage analysis: aws(38), python(17), terraform(11)
 mise_global_tools:
-  python: "3.11.7"
-  node: "20.11.0"
-  terraform: "1.6.6"
+  python: "latest"
+  node: "latest"
+  terraform: "latest"
   awscli: "latest"
 
 # Project-specific .tool-versions template
