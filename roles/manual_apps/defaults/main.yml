@@ -19,16 +19,6 @@ appstore_manual_apps:
     category: "Utilities"
     reason: "Corporate authentication may be required"
     
-  - name: "Numbers"
-    id: "409203825"
-    category: "Productivity"
-    reason: "Apple ID authentication required"
-    
-  - name: "Pages"
-    id: "409201541"
-    category: "Productivity"
-    reason: "Apple ID authentication required"
-    
   - name: "Slack"
     id: "803453959"
     category: "Communication"
@@ -38,30 +28,6 @@ appstore_manual_apps:
     id: "497799835"
     category: "Developer Tools"
     reason: "Large download, Apple ID required"
-    
-  - name: "Xmind"
-    id: "1327661892"
-    category: "Productivity"
-    reason: "License activation may be required"
-    
-  - name: "iMovie"
-    id: "408981434"
-    category: "Photo & Video"
-    reason: "Apple ID authentication required"
-
-# Direct download applications
-direct_download_apps:
-  - name: "Docker Desktop"
-    url: "https://www.docker.com/products/docker-desktop"
-    reason: "License agreement and account registration required"
-    
-  - name: "JetBrains IDEs"
-    url: "https://www.jetbrains.com/toolbox-app/"
-    reason: "License activation required"
-    
-  - name: "Adobe Creative Suite"
-    url: "https://creative.adobe.com/"
-    reason: "Subscription and license activation required"
 
 # Manual download from official websites (no package manager available)
 official_website_apps:
@@ -118,14 +84,6 @@ config_migration_apps:
   - name: "Visual Studio Code"
     config_path: "~/Library/Application Support/Code/User/"
     backup_dir: "configs/vscode"
-
-# Enterprise/Corporate tools
-enterprise_apps:
-  - name: "VPN Client"
-    reason: "Corporate-specific configuration required"
-    
-  - name: "Company-specific tools"
-    reason: "Internal distribution only"
 
 # Guide output settings
 guide_output_dir: "{{ ansible_env.HOME }}/Desktop"
