@@ -45,7 +45,7 @@ EOF
 6. Run the script.
 ```
 chmod +x requirement.sh
-. requirement.sh
+. ./requirement.sh
 ```
 
 7. Run playbook.
