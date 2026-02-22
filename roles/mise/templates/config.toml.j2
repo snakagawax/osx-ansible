@@ -1,0 +1,7 @@
+[tools]
+{% for tool, version in mise_config.tools.items() %}
+{{ tool }} = "{{ version }}"
+{% endfor %}
+
+[settings]
+idiomatic_version_file_enable_tools = {{ mise_config.settings.idiomatic_version_file_enable_tools | to_json }}

@@ -1,4 +1,0 @@
----
-pip3_packages:
-  - { name: boto3 }
-  - { name: cfn-lint }

@@ -1,0 +1,5 @@
+---
+pnpm_global_packages:
+  - { name: "@anthropic-ai/claude-code" }
+  - { name: "@google/gemini-cli" }
+  - { name: "@openai/codex" }

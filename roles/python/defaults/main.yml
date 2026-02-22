@@ -1,0 +1,6 @@
+---
+uv_tools:
+  - { name: cfn-lint }
+
+pip_packages:
+  - { name: boto3 }

@@ -1,7 +1,14 @@
 ---
-- name: Install fisherman
-  shell: curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
+- name: Create fish functions directory
+  file:
+    path: ~/.config/fish/functions
+    state: directory
 
-- name: 
-  command: /usr/local/bin/fish -c "fisher install '{{item.name}}'"
+- name: Install fisher
+  get_url:
+    url: https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish
+    dest: ~/.config/fish/functions/fisher.fish
+
+- name: Install fisher plugins
+  command: /opt/homebrew/bin/fish -c "fisher install '{{ item.name }}'"
   with_items: '{{ fisher_packages }}'

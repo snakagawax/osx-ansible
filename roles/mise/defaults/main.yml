@@ -1,0 +1,9 @@
+---
+mise_config:
+  tools:
+    node: "latest"
+    pnpm: "latest"
+    python: "latest"
+    terraform: "latest"
+  settings:
+    idiomatic_version_file_enable_tools: []

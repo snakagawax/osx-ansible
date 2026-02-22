@@ -8,35 +8,31 @@ homebrew_packages:
   - { name: git-secrets}
   - { name: ghq }
   - { name: gh }
-  - { name: peco }
   - { name: curl }
-  - { name: wget }
   - { name: tree }
-  - { name: nkf }
   - { name: jq }
   - { name: direnv }
-  - { name: tfenv }
+  - { name: mise }
+  - { name: uv }
   - { name: tflint }
-  - { name: terminal-notifier }
+  - { name: tmux }
   - { name: grep }
   - { name: fish }
   - { name: starship }
   - { name: fzf }
-  - { name: pyenv }
   - { name: trash }
 
 homebrew_cask_packages:
   - { name: 1password-cli }
-  - { name: cheatsheet }
+  - { name: clipy }
+  - { name: drawio }
   - { name: google-chrome }
   - { name: google-japanese-ime }
   - { name: iterm2 }
   - { name: karabiner-elements }
-  - { name: docker }
-  - { name: kindle }
-  - { name: notion }
+  - { name: obsidian }
+  - { name: rancher }
   - { name: qlmarkdown }
   - { name: rectangle }
-  - { name: maccy }
   - { name: typora }
   - { name: visual-studio-code }

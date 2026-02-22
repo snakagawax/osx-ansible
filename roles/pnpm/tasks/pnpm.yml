@@ -1,0 +1,6 @@
+---
+- name: Install pnpm global packages
+  command: "pnpm install -g {{ item.name }}"
+  environment:
+    PATH: "{{ ansible_env.HOME }}/.local/share/mise/shims:{{ ansible_env.HOME }}/.local/bin:/opt/homebrew/bin:{{ ansible_env.PATH }}"
+  with_items: "{{ pnpm_global_packages }}"

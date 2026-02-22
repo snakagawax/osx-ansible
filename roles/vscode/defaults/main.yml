@@ -1,5 +1,11 @@
 ---
 vscode_extensions:
   - { name: amazonwebservices.aws-toolkit-vscode }
+  - { name: anthropic.claude-code }
+  - { name: bierner.markdown-mermaid }
+  - { name: donjayamanne.githistory }
+  - { name: hediet.vscode-drawio }
+  - { name: marp-team.marp-vscode }
+  - { name: ms-ceintl.vscode-language-pack-ja }
   - { name: redhat.vscode-yaml }
   - { name: yzhang.markdown-all-in-one }

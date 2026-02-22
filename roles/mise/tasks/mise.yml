@@ -1,0 +1,16 @@
+---
+- name: Deploy mise config.toml
+  template:
+    src: config.toml.j2
+    dest: "{{ ansible_env.HOME }}/.config/mise/config.toml"
+
+- name: Trust mise config
+  command: mise trust {{ ansible_env.HOME }}/.config/mise/config.toml
+  changed_when: false
+
+- name: Install mise tools
+  command: mise install --yes
+  environment:
+    PATH: "/opt/homebrew/bin:{{ ansible_env.PATH }}"
+  register: mise_install_result
+  changed_when: "'install' in mise_install_result.stderr"

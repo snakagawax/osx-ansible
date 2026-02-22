@@ -4,6 +4,10 @@
   connection: local
   roles:
     - { role: homebrew, tags: [ homebrew ] }
+    - { role: mise, tags: [ mise ] }
+    - { role: fish, tags: [ fish ] }
     - { role: git, tags: [ git ] }
     - { role: mac, tags: [ mac ] }
+    - { role: pnpm, tags: [ pnpm ] }
+    - { role: python, tags: [ python ] }
     - { role: vscode, tags: [ vscode ] }
