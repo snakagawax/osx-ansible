@@ -9,9 +9,7 @@
   with_items: '{{ homebrew_packages }}'
 
 - name: install homebrew cask packages
-  homebrew:
+  homebrew_cask:
     name: '{{ item.name }}'
     state: '{{ item.state | default("present") }}'
-    install_options: cask
   with_items: '{{ homebrew_cask_packages }}'
-  failed_when: no

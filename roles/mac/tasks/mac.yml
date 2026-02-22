@@ -1,8 +1,15 @@
 ---
 - name: Create screenshot directory
   file:
-    path: "{{ ansible_env.HOME }}/screenshot"
+    path: "{{ ansible_facts.env.HOME }}/Pictures/ss"
     state: directory
+
+- name: Disable Spotlight shortcut (Cmd+Space)
+  command: >
+    /usr/libexec/PlistBuddy -c
+    "Set :AppleSymbolicHotKeys:64:enabled false"
+    {{ ansible_facts.env.HOME }}/Library/Preferences/com.apple.symbolichotkeys.plist
+  changed_when: false
 
 - name: Setup OS X defaults
   osx_defaults:

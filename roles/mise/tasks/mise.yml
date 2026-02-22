@@ -1,24 +1,24 @@
 ---
 - name: Ensure mise config directory exists
   file:
-    path: "{{ ansible_env.HOME }}/.config/mise"
+    path: "{{ ansible_facts.env.HOME }}/.config/mise"
     state: directory
     mode: "0755"
 
 - name: Deploy mise config.toml
   template:
     src: config.toml.j2
-    dest: "{{ ansible_env.HOME }}/.config/mise/config.toml"
+    dest: "{{ ansible_facts.env.HOME }}/.config/mise/config.toml"
 
 - name: Trust mise config
-  command: mise trust {{ ansible_env.HOME }}/.config/mise/config.toml
+  command: mise trust {{ ansible_facts.env.HOME }}/.config/mise/config.toml
   environment:
-    PATH: "/opt/homebrew/bin:{{ ansible_env.PATH }}"
+    PATH: "/opt/homebrew/bin:{{ ansible_facts.env.PATH }}"
   changed_when: false
 
 - name: Install mise tools
   command: mise install --yes
   environment:
-    PATH: "/opt/homebrew/bin:{{ ansible_env.PATH }}"
+    PATH: "/opt/homebrew/bin:{{ ansible_facts.env.PATH }}"
   register: mise_install_result
   changed_when: "'install' in mise_install_result.stderr"

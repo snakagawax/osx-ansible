@@ -2,11 +2,11 @@
 - name: Install uv tools
   command: "uv tool install {{ item.name }}"
   environment:
-    PATH: "{{ ansible_env.HOME }}/.local/share/mise/shims:{{ ansible_env.HOME }}/.local/bin:/opt/homebrew/bin:{{ ansible_env.PATH }}"
+    PATH: "{{ ansible_facts.env.HOME }}/.local/share/mise/shims:{{ ansible_facts.env.HOME }}/.local/bin:/opt/homebrew/bin:{{ ansible_facts.env.PATH }}"
   with_items: "{{ uv_tools }}"
 
 - name: Install pip packages
   command: "pip install {{ item.name }}"
   environment:
-    PATH: "{{ ansible_env.HOME }}/.local/share/mise/shims:{{ ansible_env.HOME }}/.local/bin:/opt/homebrew/bin:{{ ansible_env.PATH }}"
+    PATH: "{{ ansible_facts.env.HOME }}/.local/share/mise/shims:{{ ansible_facts.env.HOME }}/.local/bin:/opt/homebrew/bin:{{ ansible_facts.env.PATH }}"
   with_items: "{{ pip_packages }}"
