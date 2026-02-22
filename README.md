@@ -1,56 +1,57 @@
 # Mac OS X Setup
 
 ## Procedure
-- Install Xcode from AppStore.
 
-- Agree the license.
-  ```
-  sudo xcodebuild -license
-  ```
+1. Install Xcode from AppStore.
 
-- Launch Xcode and install required components.
+2. Agree the license.
+```
+sudo xcodebuild -license
+```
 
-- Install Command Line Tool.
-  ```
-  xcode-select --install
-  ```
-  If it is not able to install from cli, download Command Line Tool from [official website](https://developer.apple.com/download/more/) and install it.
+3. Launch Xcode and install required components.
 
-- Create a script.
-  ```
-  cat << 'EOF' > requirement.sh
-  #!/bin/bash
+4. Install Command Line Tool.
+```
+xcode-select --install
+```
+If it is not able to install from cli, download Command Line Tool from [official website](https://developer.apple.com/download/more/) and install it.
 
-  # install homebrew
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
-  eval "$(/opt/homebrew/bin/brew shellenv)"
-  softwareupdate --all --install --force
-  brew doctor
-  brew update
+5. Create a script.
+```
+cat << 'EOF' > requirement.sh
+#!/bin/bash
 
-  # install ansible
-  brew install ansible
+# install homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
+softwareupdate --all --install --force
+brew doctor
+brew update
 
-  # git clone
-  ANSIBLE_DIR=${HOME}/ghq/github.com/snakagawax
-  mkdir -p ${ANSIBLE_DIR}
-  cd ${ANSIBLE_DIR}
-  git clone https://github.com/snakagawax/osx-ansible.git
-  cd osx-ansible
-  EOF
-  ```
+# install ansible
+brew install ansible
 
-- Run the script.
-  ```
-  chmod +x requirement.sh
-  . requirement.sh
-  ```
+# git clone
+ANSIBLE_DIR=${HOME}/ghq/github.com/snakagawax
+mkdir -p ${ANSIBLE_DIR}
+cd ${ANSIBLE_DIR}
+git clone https://github.com/snakagawax/osx-ansible.git
+cd osx-ansible
+EOF
+```
 
-- Run playbook.
-  ```
-  ansible-playbook localhost.yml
-  ```
+6. Run the script.
+```
+chmod +x requirement.sh
+. requirement.sh
+```
+
+7. Run playbook.
+```
+ansible-playbook localhost.yml
+```
 
 ## Reference
 - https://github.com/knakayama/mac-os-x-setup
