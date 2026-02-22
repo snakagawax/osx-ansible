@@ -1,4 +1,11 @@
 ---
+- name: Ensure git clone parent directories exist
+  file:
+    path: "{{ item.dest | dirname }}"
+    state: directory
+  with_items:
+    - "{{ git_repositories }}"
+
 - name: Clone git repositories
   git:
     repo: "{{ item.repo }}"

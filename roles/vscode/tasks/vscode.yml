@@ -1,4 +1,11 @@
 ---
+- name: Check if code command exists
+  command: which code
+  register: code_exists
+  changed_when: false
+  failed_when: false
+
 - name: Install vscode extensions
   command: "code --install-extension {{item.name}}"
   with_items: '{{ vscode_extensions }}'
+  when: code_exists.rc == 0

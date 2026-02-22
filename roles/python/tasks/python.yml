@@ -6,7 +6,7 @@
   with_items: "{{ uv_tools }}"
 
 - name: Install pip packages
-  command: "{{ ansible_env.HOME }}/.local/share/mise/shims/pip install {{ item.name }}"
+  command: "pip install {{ item.name }}"
   environment:
     PATH: "{{ ansible_env.HOME }}/.local/share/mise/shims:{{ ansible_env.HOME }}/.local/bin:/opt/homebrew/bin:{{ ansible_env.PATH }}"
   with_items: "{{ pip_packages }}"

@@ -12,6 +12,8 @@
 
 - name: Trust mise config
   command: mise trust {{ ansible_env.HOME }}/.config/mise/config.toml
+  environment:
+    PATH: "/opt/homebrew/bin:{{ ansible_env.PATH }}"
   changed_when: false
 
 - name: Install mise tools
