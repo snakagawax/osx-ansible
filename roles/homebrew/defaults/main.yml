@@ -1,9 +1,4 @@
 ---
-homebrew_taps:
-  - sanemat/font
-  - mackerelio/mackerel-agent
-  - aws/tap
-
 homebrew_packages:
   - { name: readline }
   - { name: openssl }
@@ -12,7 +7,7 @@ homebrew_packages:
   - { name: git }
   - { name: git-secrets}
   - { name: ghq }
-  - { name: hub }
+  - { name: gh }
   - { name: peco }
   - { name: curl }
   - { name: wget }
@@ -23,13 +18,16 @@ homebrew_packages:
   - { name: tfenv }
   - { name: tflint }
   - { name: terminal-notifier }
-  - { name: mkr }
   - { name: grep }
+  - { name: fish }
+  - { name: starship }
+  - { name: fzf }
+  - { name: pyenv }
+  - { name: trash }
 
 homebrew_cask_packages:
   - { name: 1password-cli }
   - { name: cheatsheet }
-  - { name: clipy }
   - { name: google-chrome }
   - { name: google-japanese-ime }
   - { name: iterm2 }
@@ -38,7 +36,7 @@ homebrew_cask_packages:
   - { name: kindle }
   - { name: notion }
   - { name: qlmarkdown }
-  - { name: skitch }
-  - { name: spectacle }
+  - { name: rectangle }
+  - { name: maccy }
   - { name: typora }
   - { name: visual-studio-code }

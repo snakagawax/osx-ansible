@@ -1,4 +1,9 @@
 ---
+- name: Create screenshot directory
+  file:
+    path: "{{ ansible_env.HOME }}/screenshot"
+    state: directory
+
 - name: Setup OS X defaults
   osx_defaults:
     domain: "{{ item.domain }}"
@@ -8,3 +13,6 @@
     state: present
   with_items:
     - "{{ osx_defaults }}"
+
+- name: Restart Dock
+  command: killall Dock

@@ -4,12 +4,11 @@ osx_defaults:
     key: NSCloseAlwaysConfirmsChanges
     type: bool
     value: true
-  
+
   - domain: com.apple.dock
     key: autohide
     type: bool
     value: true
-    notify: "Restart Dock"
 
   - domain: com.apple.dock
     key: orientation
@@ -20,7 +19,7 @@ osx_defaults:
     key: mineffect
     type: string
     value: "scale"
-    
+
   - domain: com.apple.dock
     key: mru-spaces
     type: bool
@@ -28,11 +27,6 @@ osx_defaults:
 
   - domain: com.apple.finder
     key: AppleShowAllFiles
-    type: bool
-    value: true
-
-  - domain: com.apple.finder
-    key: QLEnableTextSelection
     type: bool
     value: true
 
@@ -65,11 +59,6 @@ osx_defaults:
     key: location
     type: string
     value: "{{ ansible_env.HOME }}/screenshot"
-
-  - domain: com.apple.menuextra.battery
-    key: ShowPercent
-    type: string
-    value: "YES"
 
   - domain: com.apple.AppleMultitouchTrackpad
     key: TrackpadCornerSecondaryClick
