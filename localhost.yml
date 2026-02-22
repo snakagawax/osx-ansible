@@ -2,6 +2,10 @@
 - name: setup osx
   hosts: local
   connection: local
+  vars_prompt:
+    - name: sudo_password
+      prompt: "Enter sudo password (for cask packages)"
+      private: true
   roles:
     - { role: homebrew, tags: [ homebrew ] }
     - { role: mise, tags: [ mise ] }
