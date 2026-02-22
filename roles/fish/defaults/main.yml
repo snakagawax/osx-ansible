@@ -1,6 +1,5 @@
 ---
 fisher_packages:
-  - { name: jorgebucaran/fisher }
   - { name: edc/bass }
   - { name: decors/fish-ghq }
   - { name: PatrickF1/fzf.fish }
