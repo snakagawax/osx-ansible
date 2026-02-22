@@ -5,21 +5,21 @@
 
 - Agree the license.
   ```
-  $ sudo xcodebuild -license
+  sudo xcodebuild -license
   ```
 
 - Launch Xcode and install required components.
 
 - Install Command Line Tool.
   ```
-  $ xcode-select --install
+  xcode-select --install
   ```
   If it is not able to install from cli, download Command Line Tool from [official website](https://developer.apple.com/download/more/) and install it.
 
 - Create a script.
   ```
-  $ cat << 'EOF' > requirement.sh
-  #!bin/bash
+  cat << 'EOF' > requirement.sh
+  #!/bin/bash
 
   # install homebrew
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -43,13 +43,13 @@
 
 - Run the script.
   ```
-  $ chmod +x requirement.sh
-  $ . requirement.sh
+  chmod +x requirement.sh
+  . requirement.sh
   ```
 
 - Run playbook.
   ```
-  $ ansible-playbook localhost.yml
+  ansible-playbook localhost.yml
   ```
 
 ## Reference
