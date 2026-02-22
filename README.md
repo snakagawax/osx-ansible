@@ -53,5 +53,7 @@ chmod +x requirement.sh
 ansible-playbook localhost.yml
 ```
 
+8. Run [post setup](docs/post-setup.md).
+
 ## Reference
 - https://github.com/knakayama/mac-os-x-setup

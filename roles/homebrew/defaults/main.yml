@@ -35,4 +35,5 @@ homebrew_cask_packages:
   - { name: qlmarkdown }
   - { name: rectangle }
   - { name: typora }
+  - { name: alfred }
   - { name: visual-studio-code }
