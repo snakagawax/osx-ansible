@@ -12,4 +12,5 @@
   homebrew_cask:
     name: '{{ item.name }}'
     state: '{{ item.state | default("present") }}'
+    sudo_password: '{{ ansible_become_password | default(omit) }}'
   with_items: '{{ homebrew_cask_packages }}'

@@ -50,7 +50,7 @@ chmod +x requirement.sh
 
 7. Run playbook.
 ```
-ansible-playbook localhost.yml
+ansible-playbook localhost.yml -K
 ```
 
 8. Run [post setup](docs/post-setup.md).
